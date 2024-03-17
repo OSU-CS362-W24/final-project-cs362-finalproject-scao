@@ -1,6 +1,6 @@
 /**
  * This function sorts an array of X/Y points by ascending X value.  The
- * function only operates on data where the X value us numeric.  In other
+ * function only operates on data where the X value is numeric.  In other
  * words, it won't work on bar chart data, where the X values are strings.
  *
  * @param points An array of x,y data points.  Should have the following format:
