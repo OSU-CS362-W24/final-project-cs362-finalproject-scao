@@ -1,0 +1,18 @@
+describe('Chart Data is Maintained Across Pages', () => {
+  it('fills data, changes graph type, contains same data', () => {
+    cy.visit('/')
+    cy.contains("Line").click()
+    cy.fillData1()
+    cy.contains("Scatter").click()
+    cy.findByLabelText("Chart title").should("have.value", "My Title")
+    cy.findByLabelText("X label").should("have.value", "My X Label")
+    cy.findByLabelText("Y label").should("have.value", "My Y Label")
+    cy.get(":nth-child(4) > .x-value-input").should("have.value", "1")
+    cy.get(":nth-child(6) > .x-value-input").should("have.value", "2")
+    cy.get(":nth-child(8) > .x-value-input").should("have.value", "3")
+    cy.get(":nth-child(5) > .y-value-input").should("have.value", "2")
+    cy.get(":nth-child(7) > .y-value-input").should("have.value", "4")
+    cy.get(":nth-child(9) > .y-value-input").should("have.value", "8")
+    cy.contains("Generate chart").click()
+  })
+})
