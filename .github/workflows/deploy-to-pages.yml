@@ -1,4 +1,4 @@
-name: Deploy to Github Pages
+name: Deploy to GitHub Pages
 on:
   push:
     branches: [ main ]
@@ -6,9 +6,9 @@ jobs:
   build-and-test:
     uses: ./.github/workflows/build-and-test.yml
     with:
-      upload-pages-artifacts: true
-    deploy-to-pages:
-      runs-on: ubuntu-latest
+      upload-pages-artifact: true
+  deploy-to-pages:
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
