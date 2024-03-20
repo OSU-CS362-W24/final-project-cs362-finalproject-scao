@@ -4,7 +4,7 @@ on:
     branches: [ main ]
   workflow_call:
     inputs:
-      upload-page-artifact:
+      upload-pages-artifact:
         type: boolean
         required: false
 jobs:
